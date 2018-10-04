@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./../lib/css/default.css">
+</head>
+
+<body>
+    <div id="capture" style="padding: 10px; background: #f5da55">
+        <h4 style="color: #000; ">Hello world!</h4>
+    </div>
+    <div class="second shootable">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima perferendis voluptate optio incidunt aut
+            enim molestias temporibus nam, iusto numquam dicta saepe, repellendus magnam modi nesciunt corrupti ullam!
+            Quis, rem?
+        </p>
+    </div>
+
+
+    <div class="br-widget">
+        <div class="brw--screenshot-container">
+            <!-- Container for screenshot -->
+        </div>
+        <div class="brw--form__container">
+            <form action="" class="brw--form__form">
+                <div class="brw--form__input-group">
+                    <label for="cause">Cual fue el error?</label>
+                    <input type="text" class="brw-form__input-field" name="cause">
+                </div>
+                <div class="brw--form__input-group">
+                    <label for="cause">Por favor detalle los pasos que usted ejecuto antes de suceder el error</label>
+                    <textarea rows="6" class="brw-form__input-field" name="steps"></textarea>
+                </div>
+                <div class="brw--form__submit">
+                    <button class="brw--form__submit-button">Send</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+</body>
+<script src="../node_modules/html2canvas/dist/html2canvas.min.js"></script>
+<script src="./../index.js"></script>
+<script type="text/javascript">
+
+    BugReporter.load();
+
+    document.querySelector('.shootable').addEventListener('click', function (e) {
+        console.log("clicked the element");
+        html2canvas(e.target).then(canvas => {
+            var image = new Image(400);
+            image.src = canvas.toDataURL("image/jpeg");
+            document.querySelector('.brw--screenshot-container').appendChild(image);
+            console.log(canvas.toDataURL("image/jpeg"));
+        });
+    });
+</script>
+
+</html>

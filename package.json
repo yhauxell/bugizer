@@ -1,0 +1,14 @@
+{
+  "name": "bug-reporter",
+  "version": "1.0.0",
+  "description": "Tool for error reporting including screenshot",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "yhauxell@gmail.com",
+  "license": "MIT",
+  "dependencies": {
+    "html2canvas": "^1.0.0-alpha.12"
+  }
+}

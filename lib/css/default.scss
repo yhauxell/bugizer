@@ -1,0 +1,12 @@
+.shootable {
+  border: 1px solid transparent;
+  box-sizing: border-box;
+  :hover {
+    border: 1px solid #ccc;
+  }
+}
+.br-widget {
+  .brw--screenshot-container {
+    border: 2px solid #ccc;
+  }
+}

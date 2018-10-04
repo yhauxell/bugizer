@@ -1,0 +1,14 @@
+.shootable {
+  border: 1px solid transparent;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.shootable :hover {
+  border: 1px solid #ccc;
+}
+
+.br-widget .brw--screenshot-container {
+  border: 2px solid #ccc;
+}
+/*# sourceMappingURL=default.css.map */
